@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>event delegate</h2>
+    <ul id="item-container">
+        <li>Lorem, ipsum.</li>
+        <li>Aspernatur, velit!</li>
+        <li>Incidunt, aut.</li>
+        <li>Minima, et!</li>
+    </ul>
+    <button id="add-item">Add item</button>
+
+    <script>
+
+        // aita vul niyom
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     item.addEventListener('click', function(){
+        //         document.getElementById('item-container');
+        //         // removeChild(item); 
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        // aita right niyom
+        document.getElementById('add-item').addEventListener('click', function(){
+            const li = document.createElement('li');
+            li.innerText= 'brand new item';
+            li.classList.add('item');
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+
+        })
+
+        document.getElementById('item-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+</html>
